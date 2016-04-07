@@ -73,6 +73,8 @@ public class Shoot : MonoBehaviour
         }
     }
 
+    //This method detects the collision between the player (gun) object and ammunition box. 
+    //when player walks into the ammunition box, the ammunition count resets to 6 bullets
     void OnTriggerEnter2D(Collider2D col){
 
     	if (col.gameObject.tag=="ammo"){
