@@ -54,7 +54,7 @@ public class Shoot : MonoBehaviour
 	            Temporary_RigidBody = Temporary_Bullet_Handler.GetComponent<Rigidbody>();
 
 	            //Tell the bullet to be "pushed" forward by an amount set by Bullet_Forward_Force. 
-	          	if(facingRight = facingRight){
+	          	if(facingRight){
 	              Temporary_RigidBody.AddForce(transform.right * Bullet_Forward_Force);
 	              print ("shoot right");
 	              }
@@ -72,5 +72,14 @@ public class Shoot : MonoBehaviour
         }
         }
     }
+
+    void OnTriggerEnter2D(Collider2D col){
+
+    	if (col.gameObject.tag=="ammo"){
+    		print("ammo detected");
+    		ammo = 6;
+  	}
+  	}
+
 }
 
